@@ -10,7 +10,10 @@
     <button class="text-white font-semibold text-4xl bg-[#90d63a] rounded-full w-[60%] border-white border-3 border-b-15 py-2 hover:bg-[#7fc727]"><a href="/" target="" rel="noopener noreferrer">Celebrity</a></button>
     <button class="text-white font-semibold text-4xl bg-[#90d63a] rounded-full w-[60%] border-white border-3 border-b-15 py-2 hover:bg-[#7fc727]"><a href="/" target="" rel="noopener noreferrer">Anime</a></button>
     <button class="text-white font-semibold text-4xl bg-[#90d63a] rounded-full w-[60%] border-white border-3 border-b-15 py-2 hover:bg-[#7fc727]"><a href="/" target="" rel="noopener noreferrer">Emoji</a></button>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTX8xxZOb2HrwQ8zksLn8Tv-Pz36PK9PkmTA&s" alt="">
+    <button class="text-primary font-semibold text-4xl bg-[#90d63a] rounded-full w-[60%] py-4">.</button>
+    <div class="w-[60%] flex flex-col items-end">
+    <img src="images/icespice.png" alt="" class="h-[90%]">
+    </div>
 </div>
 
 <!--menu komponent zde-->

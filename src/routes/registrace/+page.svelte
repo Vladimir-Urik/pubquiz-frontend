@@ -12,7 +12,7 @@
                 <input type="email" placeholder="Email" class="bg-white border-3 border-black rounded-3xl p-2 w-full">
                 <input type="password" placeholder="Heslo" class="bg-white border-3 border-black rounded-3xl p-2 w-full"> 
             </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTX8xxZOb2HrwQ8zksLn8Tv-Pz36PK9PkmTA&s" alt="">
+            <img src="images/icespice.png" alt="" class="w-[70%]">
         </div>
     </form>
     <button class="text-white font-semibold text-3xl bg-primary rounded-3xl w-[40%] border-white border-3 border-b-8 py-2 hover:bg-primary-600 mt-10"><a href="/" target="" rel="noopener noreferrer">Done</a></button>

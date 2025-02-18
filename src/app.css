@@ -1,1 +1,48 @@
 @import 'tailwindcss';
+
+body {
+    font-family: 'Geologica Variable', sans-serif;
+}
+
+@theme {
+    /* Zelena */
+    --color-primary-50: #f7fde8;
+    --color-primary-100: #ecfbcc;
+    --color-primary-200: #d8f79f;
+    --color-primary-300: #bdef67;
+    --color-primary-400: #9adf27; /* ORIGINAL */
+    --color-primary: #9adf27; /* ORIGINAL */
+    --color-primary-500: #84c81a;
+    --color-primary-600: #659f11;
+    --color-primary-700: #4d7912;
+    --color-primary-800: #3f6014;
+    --color-primary-900: #365116;
+    --color-primary-950: #1a2d06;
+    
+    /* Fialova */
+    --color-secondary-50: #f3f2ff;
+    --color-secondary-100: #e9e8ff;
+    --color-secondary-200: #d6d4ff;
+    --color-secondary-300: #b7b1ff;
+    --color-secondary-400: #9385ff;
+    --color-secondary-500: #826afe; /* ORIGINAL */
+    --color-secondary: #826afe; /* ORIGINAL */
+    --color-secondary-600: #5e31f6;
+    --color-secondary-700: #4f1fe2;
+    --color-secondary-800: #4119be;
+    --color-secondary-900: #38179b;
+    --color-secondary-950: #200c69;
+
+    --color-tertiary-50: #fef1fa;
+    --color-tertiary-100: #fee5f6;
+    --color-tertiary-200: #ffcaf0;
+    --color-tertiary-300: #ff9fe2;
+    --color-tertiary-400: #ff63cc;
+    --color-tertiary-500: #ff45ba; /* ORIGINAL */
+    --color-tertiary: #ff45ba; /* ORIGINAL */
+    --color-tertiary-600: #f01293;
+    --color-tertiary-700: #d10576;
+    --color-tertiary-800: #ad0760;
+    --color-tertiary-900: #8f0c53;
+    --color-tertiary-950: #58002e;
+} 

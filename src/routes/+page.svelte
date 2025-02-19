@@ -3,6 +3,7 @@
     import Logo from "../components/Logo.svelte";
     import Heading from "../components/Heading.svelte";
     import Container from '../components/Container.svelte';
+	import Menu from "../components/Menu.svelte";
 </script>
 
 <Container>

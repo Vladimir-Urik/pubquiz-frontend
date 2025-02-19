@@ -1,6 +1,6 @@
 <script lang="ts">
-    import smLogo from '../../components/smLogo.svelte';
-import QuizButton from '../../components/QuizButton.svelte';
+	import Menu from '../../components/Menu.svelte';
+    import QuizButton from '../../components/QuizButton.svelte';
 	import SmLogo from '../../components/smLogo.svelte';
 
     const quizCategories = [
@@ -11,10 +11,10 @@ import QuizButton from '../../components/QuizButton.svelte';
     ];
 </script>
 
-<div class="bg-secondary p-5">
+<div class="bg-secondary p-5 h-[100dvh]">
     <SmLogo/>
 
-    <div class="w-full min-h-screen h-full flex flex-col items-center gap-5">
+    <div class="w-full  flex flex-col items-center gap-5">
         {#each quizCategories as category}
             <QuizButton text={category.text} href={category.href} />
         {/each}
@@ -22,5 +22,6 @@ import QuizButton from '../../components/QuizButton.svelte';
         <p class="text-primary font-semibold text-4xl bg-[#90d63a] rounded-full w-[60%] xl:w-[30%] py-4">.</p>
         
         <!--<div class="w-[60%] flex flex-col items-end"><img src="images/icespice.png" alt="Ice Spice" class="h-[90%]" /></div>-->
+    <Menu/>
     </div>
 </div>

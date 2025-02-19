@@ -2,6 +2,7 @@
     export let type: string = "text";
     export let placeholder: string;
     export let value: string = "";
+    export let readonly: boolean = false;
 </script>
 
 <input

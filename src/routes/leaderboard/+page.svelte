@@ -2,7 +2,17 @@
     import Container from "../../components/Container.svelte";
     import SmLogo from "../../components/smLogo.svelte";
     import Menu from "../../components/Menu.svelte";
+    import LeaderboardItem from "../../components/LeaderboardItem.svelte";
 
+    let leaderboard = [
+        { placement: 1, username: "Username" },
+        { placement: 2, username: "Username" },
+        { placement: 3, username: "Username" },
+        { placement: 4, username: "Username" },
+        { placement: 5, username: "Username" },
+        { placement: 6, username: "Username" }
+
+    ];
 </script>
 
 <div class="bg-secondary p-5 h-[100dvh]">
@@ -17,8 +27,15 @@
         </div>
         
     </div>
-        <div class="h-[50%] bg-white w-full mt-8 rounded-3xl">
-
+        <div class="h-[50%] bg-white w-full mt-8 rounded-3xl flex flex-col items-center">
+            <div class="p-5 w-[90%] overflow-y-auto">
+                {#each leaderboard as entry}
+                    <LeaderboardItem 
+                        placement={entry.placement}
+                        username={entry.username}
+                    />
+                {/each}
+            </div>
         </div>
    <Menu/>
 </div>

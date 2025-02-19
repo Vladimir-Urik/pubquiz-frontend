@@ -5,19 +5,32 @@ import type { User, LoginRequest, RegisterRequest, UpdateUserRequest, Avatar, Le
 class ApiClient {
   private client: AxiosInstance;
 
-  constructor(baseURL: string = '/api') {
+  constructor(baseURL: string = 'http://127.0.0.1:8000/api') {
     this.client = axios.create({
       baseURL,
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      withCredentials: true
+      withCredentials: true,
     }); 
+    this.client.interceptors.response.use(
+      response => {
+        return response;
+      },
+      error => {
+        if (error.response && error.response.status === 401) {
+          // Handle 401 Unauthorized error
+          console.error('Unauthorized:', error.response);
+        }
+
+        return error.response;
+      }
+    ); 
   }
 
   // Auth endpoints
-  async login(data: LoginRequest): Promise<{ user: User; token: string }> {
+  async login(data: LoginRequest): Promise<{ user?: User; access_token?: string; message?: string; }> {
     const response = await this.client.post('/auth/login', data);
     return response.data;
   }
@@ -26,7 +39,11 @@ class ApiClient {
     await this.client.post('/auth/logout');
   }
 
-  async register(data: RegisterRequest): Promise<{ user: User; token: string }> {
+  async register(data: RegisterRequest): Promise<{ user: User; access_token: string; errors?: {
+    name?: string[];
+    email?: string[];
+    password?: string[];
+  } }> {
     const response = await this.client.post('/auth/register', data);
     return response.data;
   }

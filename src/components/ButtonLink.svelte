@@ -6,7 +6,7 @@
 
 <a
     href="{href}"
-    class="text-white text-center font-semibold text-3xl rounded-3xl px-8 border-black bg-primary button hover:bg-primary-600 border-3 border-b-8 py-2 transition-colors duration-200"
+    class="text-white text-center font-semibold text-3xl rounded-3xl px-8 border-black bg-primary ButtonLink hover:bg-primary-600 border-3 border-b-8 py-2 transition-colors duration-200"
     {target}
     rel="noopener noreferrer"
     on:click

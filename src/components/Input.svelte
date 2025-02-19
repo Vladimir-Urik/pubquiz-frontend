@@ -8,5 +8,5 @@
     {type}
     {placeholder}
     bind:value
-    class="bg-white border-3 border-black rounded-3xl py-2 px-4 w-full"
+    class="bg-white border-3 mt-3 border-black rounded-3xl py-2 px-4 w-full"
 />

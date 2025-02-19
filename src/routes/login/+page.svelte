@@ -21,5 +21,5 @@
             </div>
         </div>
     </form>
-    <Button href="/" text="Odeslat" />
+    <Button href="/quiz" text="Odeslat" />
 </Container>

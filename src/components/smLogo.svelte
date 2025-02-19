@@ -3,4 +3,4 @@
     export let altText = "";
 </script>
 
-<img src={imgSrc} alt={altText} class="w-[75%] max-w-[400px] mb-14 " />
+<img src={imgSrc} alt={altText} class="mb-10 h-25 w-auto" />

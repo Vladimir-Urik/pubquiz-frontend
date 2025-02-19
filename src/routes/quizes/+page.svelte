@@ -18,9 +18,7 @@
         {#each quizCategories as category}
             <QuizButton text={category.text} href={category.href} />
         {/each}
-        
-        <p class="text-primary font-semibold text-4xl bg-[#90d63a] rounded-full w-[60%] xl:w-[30%] py-4">.</p>
-        
+         
         <!--<div class="w-[60%] flex flex-col items-end"><img src="images/icespice.png" alt="Ice Spice" class="h-[90%]" /></div>-->
     <Menu/>
     </div>

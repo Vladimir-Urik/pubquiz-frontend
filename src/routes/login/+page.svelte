@@ -8,6 +8,9 @@
 	import ApiClient from "$lib/api/client";
 	import InputError from "../../components/InputError.svelte";
 	import { setToken } from "$lib/auth/storage";
+    import { createEventDispatcher } from 'svelte'
+
+    const dispatch = createEventDispatcher()
 
     let email = $state("");
     let password = $state("");
@@ -15,6 +18,7 @@
     let emailError: undefined | string = $state(undefined);
     let passwordError: undefined | string = $state(undefined);
 
+    
     function validateEmail() {
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             emailError = "Email musí být ve správnem formátu!";

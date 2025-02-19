@@ -20,6 +20,7 @@
 
 	onNavigate(({ to }) => {
 		route = to?.route.id || undefined;
+		token = getToken() || undefined;
 	});
 
 	const toLogin = () => {
@@ -30,13 +31,15 @@
 		goto('/quizes');
 	}
 
-	if(token != undefined && (route === "/login" || route === "/register")) {
-		toQuizes();
-	}
+	$effect(() => {
+    	if(token != undefined && (route === "/login" || route === "/register")) {
+			toQuizes();
+		}
 
-	if(token == undefined && (route !== "/login" && route !== "/register" && route !== "/")) {
-		toLogin();
-	}
+		if(token == undefined && (route !== "/login" && route !== "/register" && route !== "/")) {
+			toLogin();
+		}
+	})
 </script>
 
 {#if token == undefined && (route !== "/login" && route !== "/register" && route !== "/")}

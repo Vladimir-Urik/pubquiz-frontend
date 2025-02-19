@@ -5,7 +5,7 @@ import type { User, LoginRequest, RegisterRequest, UpdateUserRequest, Avatar, Le
 class ApiClient {
   private client: AxiosInstance;
 
-  constructor(baseURL: string = 'http://127.0.0.1:8000/api') {
+  constructor(baseURL: string = 'https://api.controlz.bar/api') {
     this.client = axios.create({
       baseURL,
       headers: {

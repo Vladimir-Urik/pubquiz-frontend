@@ -16,7 +16,7 @@
         class="mb-10 h-25 w-auto"
     />
 
-    <div class="w-fullmin-h-screen h-fullflex flex-col items-center gap-5">
+    <div class="w-full min-h-screen h-full flex flex-col items-center gap-5">
         {#each quizCategories as category}
             <QuizButton text={category.text} href={category.href} />
         {/each}

@@ -46,3 +46,11 @@ body {
     --color-tertiary-900: #8f0c53;
     --color-tertiary-950: #58002e;
 }
+
+a.active {
+    @apply text-primary;
+}
+
+a.active > img {
+    @apply border-primary;
+}

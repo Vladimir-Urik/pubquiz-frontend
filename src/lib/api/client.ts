@@ -1,11 +1,13 @@
 import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 import type { User, LoginRequest, RegisterRequest, UpdateUserRequest, Avatar, LeaderboardEntry, Quiz, Question, QuizSubmission } from './types';
+import { getToken } from '$lib/auth/storage';
 
 class ApiClient {
   private client: AxiosInstance;
 
-  constructor(baseURL: string = 'https://api.controlz.bar/api') {
+  // https://api.controlz.bar/api
+  constructor(baseURL: string = 'http://127.0.0.1:8000/api') {
     this.client = axios.create({
       baseURL,
       headers: {
@@ -73,7 +75,12 @@ class ApiClient {
 
   // Quiz endpoints
   async getQuizzes(): Promise<Quiz[]> {
-    const response = await this.client.get('/quizzes');
+    const token = getToken();
+    const response = await this.client.get('/quizzes', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
     return response.data;
   }
 

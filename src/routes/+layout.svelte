@@ -28,7 +28,7 @@
 	}
 
 	const toQuizes = () => {
-		goto('/quizes');
+		goto('/quizzes'); 
 	}
 
 	$effect(() => {

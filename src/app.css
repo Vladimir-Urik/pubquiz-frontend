@@ -52,7 +52,7 @@ a.active {
 }
 
 a.active > img {
-    @apply border-primary;
+    @apply border-primary bg-primary;
 }
 
 .arrow-left {

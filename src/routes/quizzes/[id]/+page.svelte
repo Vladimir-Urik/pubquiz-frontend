@@ -34,7 +34,7 @@
     }
 </script>
 
-<div class="bg-secondary p-5 h-[100dvh]">
+<div class="bg-secondary min-h-[calc(100dvh+375px)]">
     <SmLogo/>
 
     <div class="w-full flex flex-col items-center gap-7 xl:flex-row-reverse xl:justify-center xl:items-start xl:mt-40">

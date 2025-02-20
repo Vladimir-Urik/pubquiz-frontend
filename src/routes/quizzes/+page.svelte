@@ -15,14 +15,14 @@
     });
 </script> 
 
-<div class="bg-secondary p-5 h-[100dvh]">
+<div class="bg-secondary p-5 min-h-[100svh]">
     <MobileHeader />
 
-    <div class="w-full  flex flex-col items-center gap-5">
+    <div class="w-full mb-[100px] flex flex-col items-center gap-5">
         {#each quizes as quize}
             <QuizButton text={quize.title} href={"/quizzes/"+ quize.id} />
         {/each}
         <!--<div class="w-[60%] flex flex-col items-end"><img src="images/icespice.png" alt="Ice Spice" class="h-[90%]" /></div>-->
-    <Menu/>
     </div>
+    <Menu/>
 </div>

@@ -41,7 +41,7 @@
   }
 </script>
 
-<div class="bg-secondary p-5 h-[100dvh]">
+<div class="bg-secondary p-5 min-h-[100dvh]">
     <SmLogo/>
 
     <Heading text="Profil" />
@@ -60,7 +60,11 @@
             <div class="xl:w-[45%] aspect-square flex flex-col items-center justify-center px-4 w-[100%] max-w-[400px] xl:px-10">
                 {#if activeAvatarIndex !== -1}
                     <img src="{getAvatarUrl(avatars[activeAvatarIndex])}" alt="Ice Spice" class="w-[100%] aspect-square" />
-                    <p class="text-white text-center mt-3">Avatar "{avatars[activeAvatarIndex].name}"</p>
+                    {#if $authStore.user}
+                        <h1 class="text-white mt-4 font-bold text-2xl">
+                            {$authStore.user.name}
+                        </h1>
+                    {/if}
                 {:else}
                     <div class="w-[100%] aspect-square bg-secondary-400 rounded-md"></div>
                 {/if}
@@ -76,13 +80,17 @@
                 </button>
             </div>
         </div>
-        <div class="w-[70%] flex flex-col gap-3 xl:w-[30%] xl:gap-8">
-            {#if $authStore.user}
-                <h1 class="text-white">
-                    {$authStore.user.name}
-                </h1>
-            {/if}
-        </div> 
+        <div class="bg-white border-2 gap-2 gap-y-3 flex flex-wrap border-black p-3 justify-center w-full rounded-3xl mb-[100px]">
+            {#each avatars as avatar, index}
+                <button class=""  onclick={() => {
+                    activeAvatarIndex = index;
+                    saveAvatar();
+                }}>
+                    <img src="{getAvatarUrl(avatar)}" alt="Avatar" class:bg-primary={index == activeAvatarIndex}  class="w-[100%] hover:bg-primary rounded-full border-2 border-black max-w-[100px] aspect-square" />
+                    <p class="text-sm">{avatar.name}</p>
+                </button>
+            {/each}
+        </div>
         <Menu />
     </div>
    

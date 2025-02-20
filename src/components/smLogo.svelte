@@ -3,4 +3,6 @@
     export let altText = "";
 </script>
 
-<img src={imgSrc} alt={altText} class="mb-10 h-14 w-auto" />
+<a href="/quizzes" aria-label="Logo">
+    <img src={imgSrc} alt={altText} class="mb-10 h-14 w-auto" />
+</a>

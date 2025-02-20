@@ -5,6 +5,8 @@ export interface User {
   avatar?: Avatar;
   created_at: string;
   updated_at: string;
+  level: number;
+  xp: number;
 }
 
 export interface LoginRequest {

@@ -12,3 +12,8 @@ export const getAvatarUrl = (avatar: Avatar | undefined) => {
 
 	return getBackendUrl() + "/storage/avatars/" + avatar.path;
 }
+
+export const getPercentageToNextLevel = (xp: number, level: number) => {
+	const nextLevelXp = 100 * (level+1);
+	return Math.round(xp / nextLevelXp * 100);
+}

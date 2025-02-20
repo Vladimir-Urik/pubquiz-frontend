@@ -72,7 +72,7 @@
 
         if(response.access_token) {
             setToken(response.access_token);
-            goto('/quizes');
+            goto('/quizzes');
         }
     }
 </script>

@@ -1,17 +1,87 @@
 <script lang="ts">
-	import Field from '../../components/Field.svelte';
 	import Menu from '../../components/Menu.svelte';
 	import SmLogo from '../../components/smLogo.svelte';
+  import { authStore } from '$lib/zustand/stores/auth';
+  import { getAvatarUrl } from '$lib/api/utils';
+  import type { Avatar } from '$lib/api/types';
+  import ApiClient from '$lib/api/client';
+  import Heading from '../../components/Heading.svelte';
 
+  let avatars: Avatar[] = $state([]);
+  let activeAvatarIndex = $state(-1);
+  $effect(() => {
+    const api = new ApiClient();
+    api.setAuthToken($authStore.token);
+    api.getAvatars().then((data) => {
+      avatars = data;
+      activeAvatarIndex = avatars.findIndex((avatar) => avatar.id === $authStore.user?.avatar?.id);
+    });
+  });
+
+  const nextAvatar = () => {
+    activeAvatarIndex = (activeAvatarIndex + 1) % avatars.length;
+    saveAvatar();
+  };
+
+  const prevAvatar = () => {
+    activeAvatarIndex = (activeAvatarIndex - 1 + avatars.length) % avatars.length;
+    saveAvatar();
+  };
+
+  const saveAvatar = () => {
+      const apiClient = new ApiClient();
+      apiClient.setAuthToken($authStore.token);
+      apiClient.updateUser({
+          avatar_id: avatars[activeAvatarIndex].id
+      });
+      $authStore.setUser({
+          ...$authStore.user!,
+          avatar: avatars[activeAvatarIndex]
+      });
+  }
 </script>
 
 <div class="bg-secondary p-5 h-[100dvh]">
     <SmLogo/>
 
+    <Heading text="Profil" />
     <div class="w-full flex flex-col items-center gap-7 xl:flex-row-reverse xl:justify-center xl:items-start xl:mt-40">
-        <div class="w-[70%] flex flex-col items-end xl:w-[45%] xl:px-10"><img src="images/icespice.png" alt="Ice Spice" class="h-[90%]" /></div>
+        <div class="w-[100%] flex items-center justify-center">
+            <div class="w-12 h-full flex flex-col justify-center items-center">
+                <button  aria-label="Previous Avatar" onclick={(e) => {
+                    e.preventDefault();
+                    prevAvatar();
+                }} class="w-12 h-12 flex items-center justify-center rounded-full border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-primary hover:bg-primary-600 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 transform hover:translate-x-[2px] hover:translate-y-[2px]">
+                    <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="xl:w-[45%] aspect-square flex flex-col items-center justify-center px-4 w-[100%] max-w-[400px] xl:px-10">
+                {#if activeAvatarIndex !== -1}
+                    <img src="{getAvatarUrl(avatars[activeAvatarIndex])}" alt="Ice Spice" class="w-[100%] aspect-square" />
+                    <p class="text-white text-center mt-3">Avatar "{avatars[activeAvatarIndex].name}"</p>
+                {:else}
+                    <div class="w-[100%] aspect-square bg-secondary-400 rounded-md"></div>
+                {/if}
+            </div>
+            <div class="w-12 h-full flex flex-col justify-center items-center">
+                <button  aria-label="Next Avatar" onclick={(e) => {
+                    e.preventDefault();
+                    nextAvatar();
+                }} class="w-12 h-12 flex items-center justify-center rounded-full border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-primary hover:bg-primary-600 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 transform hover:translate-x-[2px] hover:translate-y-[2px]">
+                    <svg class="w-6 h-6 text-black rotate-180" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
         <div class="w-[70%] flex flex-col gap-3 xl:w-[30%] xl:gap-8">
-            
+            {#if $authStore.user}
+                <h1 class="text-white">
+                    {$authStore.user.name}
+                </h1>
+            {/if}
         </div> 
         <Menu />
     </div>

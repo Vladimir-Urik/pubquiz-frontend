@@ -5,12 +5,27 @@
  
 	import '../app.css';
 	import { onMount } from 'svelte';
-	import { getToken } from '$lib/auth/storage';
+	import { getToken, removeToken } from '$lib/auth/storage';
+	import ApiClient from '$lib/api/client';
+	import { authStore } from '$lib/zustand/stores/auth';
 	let { children } = $props();
 
-	let token: undefined | string = $state(undefined);
+	const apiClient = new ApiClient();
+
+	const refreshUser = () => {
+		apiClient.setAuthToken($authStore.token)
+		apiClient.getCurrentUser().then((data) => {
+			if(data == undefined) {
+				removeToken();
+				toLogin();
+			} else {
+				$authStore.setUser(data);
+			}
+		})
+	}
+
 	onMount(() => {
-		token = getToken() || undefined;
+		$authStore.setToken(getToken());
 	});
 
 	let route: string | undefined = $state(undefined);
@@ -20,7 +35,8 @@
 
 	onNavigate(({ to }) => {
 		route = to?.route.id || undefined;
-		token = getToken() || undefined;
+		$authStore.setToken(getToken());
+		refreshUser();
 	});
 
 	const toLogin = () => {
@@ -32,17 +48,23 @@
 	}
 
 	$effect(() => {
-    	if(token != undefined && (route === "/login" || route === "/register")) {
+		if($authStore.token != undefined && (route === "/login" || route === "/register")) {
 			toQuizes();
 		}
 
-		if(token == undefined && (route !== "/login" && route !== "/register" && route !== "/")) {
+		if($authStore.token == undefined && (route !== "/login" && route !== "/register" && route !== "/")) {
 			toLogin();
+		}
+	})
+
+	$effect(() => {
+		if($authStore.token != undefined && $authStore.user == undefined) {
+			refreshUser();
 		}
 	})
 </script>
 
-{#if token == undefined && (route !== "/login" && route !== "/register" && route !== "/")}
+{#if $authStore.token === undefined && (route !== "/login" && route !== "/register" && route !== "/")}
 	<p></p>
 {:else}
 	{@render children()}  

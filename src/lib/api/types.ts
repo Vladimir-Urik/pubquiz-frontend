@@ -2,7 +2,7 @@ export interface User {
   id: number;
   name: string;
   email: string;
-  avatar?: string;
+  avatar?: Avatar;
   created_at: string;
   updated_at: string;
 }
@@ -21,12 +21,13 @@ export interface RegisterRequest {
 export interface UpdateUserRequest {
   name?: string;
   email?: string;
-  avatar?: string;
+  avatar_id?: number;
 }
 
 export interface Avatar {
   id: number;
-  url: string;
+  path: string;
+  name: string;
 }
 
 export interface LeaderboardEntry {

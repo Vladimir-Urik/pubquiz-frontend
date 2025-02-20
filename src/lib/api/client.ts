@@ -2,12 +2,14 @@ import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 import type { User, LoginRequest, RegisterRequest, UpdateUserRequest, Avatar, LeaderboardEntry, Quiz, Question, QuizSubmission } from './types';
 import { getToken } from '$lib/auth/storage';
+import { getBackendUrl } from '$lib/api/utils';
 
 class ApiClient {
   private client: AxiosInstance;
 
   // https://api.controlz.bar/api
-  constructor(baseURL: string = 'http://127.0.0.1:8000/api') {
+  constructor() {
+    const baseURL = getBackendUrl() + '/api';
     this.client = axios.create({
       baseURL,
       headers: {

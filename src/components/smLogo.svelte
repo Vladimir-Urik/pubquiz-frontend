@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let imgSrc = "/logo.svg";
+    export let imgSrc = "/logo.png";
     export let altText = "";
 </script>
 

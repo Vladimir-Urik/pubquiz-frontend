@@ -54,3 +54,27 @@ a.active {
 a.active > img {
     @apply border-primary;
 }
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    transform: translateY(-50%);
+    border-top: 25px solid transparent;
+    border-right: 50px solid #9adf27;
+    border-bottom: 25px solid transparent;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%);
+    border-top: 25px solid transparent;
+    border-left: 50px solid #9adf27;
+    border-bottom: 25px solid transparent;
+}

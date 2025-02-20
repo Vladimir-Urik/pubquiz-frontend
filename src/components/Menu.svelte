@@ -4,7 +4,7 @@
     import { authStore } from '$lib/zustand/stores/auth';
 </script>
 
-<div class="z-0 fixed py-3 px-8 flex w-[80%] gap-4 justify-between bottom-10 border-2 border-white rounded-full">
+<div class="z-0 fixed bg-secondary py-3 px-8 flex w-[80%] gap-4 justify-between bottom-10 border-2 border-white rounded-full">
     <a href="/quizzes" class="text-white hover:text-primary" class:active="{page.route.id === '/quizzes'}" aria-label="Quizzes">
         <svg id="Vrstva_1" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960.19 919">
             <path style="fill: currentColor;" d="M846.88,538.45c3.79,22.15-4.18,43.13-5.34,63.95-4.29,77.06.22,159.49-4.97,236.29-.78,11.6-3.74,47.57-6.05,55.55-3.74,12.91-24.81,20.2-37.28,19.18-202.01-14.03-427.38,17.81-626.6,0-43.85-3.92-40.9-31.2-43.59-69.33-3.19-45.26-3.24-93.31-5.13-138.6-2.32-55.56.13-111.57-4.92-167.04H23.19c-15.36,0-24.91-23-22.93-38.03,5.9-44.82,118.7-136.06,147.62-176.06,8.55-39.01-11.02-193.27,8.9-216.97,12.88-15.32,120.45-19.22,120.45,7.55v74.43L484.04,0c126.97,132.64,269.93,257.14,393.76,392.02,21.31,23.21,81.21,84.86,82.37,113.21.55,13.39-10.93,33.23-23.48,33.23h-89.81Z"/>

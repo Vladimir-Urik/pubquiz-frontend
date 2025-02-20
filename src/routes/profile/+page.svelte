@@ -1,30 +1,31 @@
 <script lang="ts">
-	import Menu from '../../components/Menu.svelte';
-	import SmLogo from '../../components/smLogo.svelte';
+  import Menu from '../../components/Menu.svelte';
+  import SmLogo from '../../components/smLogo.svelte';
   import { authStore } from '$lib/zustand/stores/auth';
   import { getAvatarUrl } from '$lib/api/utils';
   import type { Avatar } from '$lib/api/types';
   import ApiClient from '$lib/api/client';
   import Heading from '../../components/Heading.svelte';
+  import MobileHeader from '../../components/MobileHeader.svelte';
+  import { avatarsStore } from '$lib/zustand/stores/avatars';
 
-  let avatars: Avatar[] = $state([]);
   let activeAvatarIndex = $state(-1);
   $effect(() => {
     const api = new ApiClient();
     api.setAuthToken($authStore.token);
     api.getAvatars().then((data) => {
-      avatars = data;
-      activeAvatarIndex = avatars.findIndex((avatar) => avatar.id === $authStore.user?.avatar?.id);
+      $avatarsStore.setAvatars(data);
+      activeAvatarIndex = $avatarsStore.avatars.findIndex((avatar) => avatar.id === $authStore.user?.avatar?.id);
     });
   });
 
   const nextAvatar = () => {
-    activeAvatarIndex = (activeAvatarIndex + 1) % avatars.length;
+    activeAvatarIndex = (activeAvatarIndex + 1) % $avatarsStore.avatars.length;
     saveAvatar();
   };
 
   const prevAvatar = () => {
-    activeAvatarIndex = (activeAvatarIndex - 1 + avatars.length) % avatars.length;
+    activeAvatarIndex = (activeAvatarIndex - 1 + $avatarsStore.avatars.length) % $avatarsStore.avatars.length;
     saveAvatar();
   };
 
@@ -32,17 +33,17 @@
       const apiClient = new ApiClient();
       apiClient.setAuthToken($authStore.token);
       apiClient.updateUser({
-          avatar_id: avatars[activeAvatarIndex].id
+          avatar_id: $avatarsStore.avatars[activeAvatarIndex].id
       });
       $authStore.setUser({
           ...$authStore.user!,
-          avatar: avatars[activeAvatarIndex]
+          avatar: $avatarsStore.avatars[activeAvatarIndex]
       });
   }
 </script>
 
 <div class="bg-secondary p-5 min-h-[100dvh]">
-    <SmLogo/>
+    <MobileHeader />
 
     <Heading text="Profil" />
     <div class="w-full flex flex-col items-center gap-7 xl:flex-row-reverse xl:justify-center xl:items-start xl:mt-40">
@@ -59,7 +60,7 @@
             </div>
             <div class="xl:w-[45%] aspect-square flex flex-col items-center justify-center px-4 w-[100%] max-w-[400px] xl:px-10">
                 {#if activeAvatarIndex !== -1}
-                    <img src="{getAvatarUrl(avatars[activeAvatarIndex])}" alt="Ice Spice" class="w-[100%] aspect-square" />
+                    <img src="{getAvatarUrl($avatarsStore.avatars[activeAvatarIndex])}" alt="Ice Spice" class="w-[100%] aspect-square" />
                     {#if $authStore.user}
                         <h1 class="text-white mt-4 font-bold text-2xl">
                             {$authStore.user.name}
@@ -81,7 +82,7 @@
             </div>
         </div>
         <div class="bg-white border-2 gap-2 gap-y-3 flex flex-wrap border-black p-3 justify-center w-full rounded-3xl mb-[100px]">
-            {#each avatars as avatar, index}
+            {#each $avatarsStore.avatars as avatar, index}
                 <button class=""  onclick={() => {
                     activeAvatarIndex = index;
                     saveAvatar();

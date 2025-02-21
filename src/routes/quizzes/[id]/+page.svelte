@@ -66,7 +66,7 @@
                     {/if}
 
                     {#if questions[questionIndex].content_type === "art"}
-                        <img class="w-full" src="{getArtUrl(questions[questionIndex].content)}" />
+                        <img class="w-[75%] md:w-[50%] mx-auto" src="{getArtUrl(questions[questionIndex].content)}" />
                     {/if}
 
                     <div class="flex flex-col w-full items-center gap-3 mt-14">

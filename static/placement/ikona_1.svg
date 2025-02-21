@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6d69ae;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: url(#Nepojmenovaný_přechod_121);
+      }
+
+      .cls-7 {
+        fill: #604694;
+      }
+
+      .cls-8 {
+        fill: #363663;
+      }
+
+      .cls-9 {
+        fill: url(#Nepojmenovaný_přechod_133);
+      }
+
+      .cls-3 {
+        opacity: .22;
+      }
+
+      .cls-4 {
+        opacity: .13;
+      }
+
+      .cls-10 {
+        fill: url(#Nepojmenovaný_přechod_84);
+      }
+
+      .cls-11 {
+        fill: url(#Nepojmenovaný_přechod_110);
+      }
+
+      .cls-12 {
+        fill: #4a3875;
+      }
+
+      .cls-5 {
+        opacity: .24;
+      }
+
+      .cls-13 {
+        fill: #3b2968;
+      }
+
+      .cls-14 {
+        fill: #413368;
+      }
+    </style>
+    <linearGradient id="Nepojmenovaný_přechod_133" data-name="Nepojmenovaný přechod 133" x1="532.09" y1="869.49" x2="532.09" y2="553.86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#604694"/>
+      <stop offset=".04" stop-color="#5d4490"/>
+      <stop offset=".39" stop-color="#503a79"/>
+      <stop offset=".72" stop-color="#48346a"/>
+      <stop offset="1" stop-color="#463266"/>
+    </linearGradient>
+    <linearGradient id="Nepojmenovaný_přechod_121" data-name="Nepojmenovaný přechod 121" x1="513.95" y1="723.58" x2="685.5" y2="723.58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27348b"/>
+      <stop offset="0" stop-color="#394594"/>
+      <stop offset=".02" stop-color="#626baa"/>
+      <stop offset=".04" stop-color="#878fbf"/>
+      <stop offset=".06" stop-color="#a8add0"/>
+      <stop offset=".09" stop-color="#c3c7df"/>
+      <stop offset=".11" stop-color="#d9dbea"/>
+      <stop offset=".14" stop-color="#eaebf3"/>
+      <stop offset=".18" stop-color="#f6f6fa"/>
+      <stop offset=".24" stop-color="#fdfdfd"/>
+      <stop offset=".38" stop-color="#fff"/>
+    </linearGradient>
+    <radialGradient id="Nepojmenovaný_přechod_110" data-name="Nepojmenovaný přechod 110" cx="427.4" cy="427.66" fx="427.4" fy="427.66" r="201.52" gradientTransform="translate(-52.83 210.54) rotate(-22.13)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5c4394"/>
+      <stop offset=".23" stop-color="#8c7ab3"/>
+      <stop offset=".49" stop-color="#bdb3d3"/>
+      <stop offset=".72" stop-color="#e0dceb"/>
+      <stop offset=".89" stop-color="#f6f5f9"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+    <linearGradient id="Nepojmenovaný_přechod_84" data-name="Nepojmenovaný přechod 84" x1="503.58" y1="563.05" x2="503.58" y2="326.9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a3549b"/>
+      <stop offset=".26" stop-color="#844e99"/>
+      <stop offset=".54" stop-color="#6a4997"/>
+      <stop offset=".8" stop-color="#5a4796"/>
+      <stop offset="1" stop-color="#554696"/>
+    </linearGradient>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.4, SVG Export Plug-In . SVG Version: 1.2.0 Build 166)  -->
+  <g>
+    <g id="Vrstva_1">
+      <path class="cls-8" d="M464.12,598.56l-102.78,289.94,198.96-11.27,217.56,14.33-159.58-315.54s-36.97,8.85-44.3,9.87c-7.33,1.02-31.57,3.68-43.02,3.86-11.45.18-9.86-5.02-23.09-6.66-13.23-1.64-38.09-5.33-45.15-7.07-7.06-1.75,1.41,22.54,1.41,22.54Z"/>
+      <circle class="cls-8" cx="528.43" cy="471.43" r="406.66"/>
+      <circle class="cls-1" cx="503.58" cy="449.94" r="406.66"/>
+      <circle class="cls-12" cx="503.58" cy="449.94" r="363.55"/>
+      <circle class="cls-7" cx="503.58" cy="445.02" r="349.73"/>
+      <path class="cls-9" d="M426.61,576.49l-102.78,289.94,198.96-11.27,217.56,14.33-159.58-315.54s-36.97,8.85-44.3,9.87c-7.33,1.02-31.57,3.68-43.02,3.86-11.45.18-9.86-5.02-23.09-6.66-13.23-1.64-38.09-5.33-45.15-7.07-7.06-1.75,1.41,22.54,1.41,22.54Z"/>
+      <polygon class="cls-2" points="464.73 585.25 417.93 861.1 522.79 855.15 513.95 585.25 464.73 585.25"/>
+      <polygon class="cls-6" points="571.71 585.25 625.25 861.9 520.33 855.15 513.95 585.25 571.71 585.25"/>
+      <path class="cls-14" d="M639.75,536.3c81.35,41.45-37.21,154.69-74.22,70.89,37.01,83.8-126.6,94.34-102.43,6.6-24.18,87.74-156.29-9.35-82.71-60.78-73.58,51.43-112.38-107.87-24.29-99.72-88.09-8.14-15.42-155.11,45.5-92-60.91-63.11,89.23-128.98,93.99-41.23-4.76-87.74,152.59-41.69,98.51,28.83,54.08-70.52,145.02,65.9,56.93,85.4,88.09-19.5,70.07,143.46-11.29,102.02Z"/>
+      <path class="cls-11" d="M639.75,513.7c81.35,41.45-37.21,154.69-74.22,70.89,37.01,83.8-126.6,94.34-102.43,6.6-24.18,87.74-156.29-9.35-82.71-60.78-73.58,51.43-112.38-107.87-24.29-99.72-88.09-8.14-15.42-155.11,45.5-92-60.91-63.11,89.23-128.98,93.99-41.23-4.76-87.74,152.59-41.69,98.51,28.83,54.08-70.52,145.02,65.9,56.93,85.4,88.09-19.5,70.07,143.46-11.29,102.02Z"/>
+      <circle class="cls-10" cx="503.58" cy="444.97" r="118.08"/>
+      <path class="cls-2" d="M549.88,500.37l-42.9-27.14c-.18-.11-.41-.1-.58.04l-39.07,32.42c-.37.31-.91-.04-.79-.5l12.55-49.19c.05-.21-.03-.42-.21-.54l-42.9-27.14c-.4-.26-.25-.88.23-.91l50.66-3.26c.21-.01.39-.16.45-.37l12.55-49.19c.12-.46.76-.5.94-.06l18.76,47.17c.08.2.28.32.49.31l50.66-3.26c.48-.03.71.57.35.87l-39.07,32.42c-.16.14-.22.36-.14.56l18.76,47.17c.18.44-.32.86-.72.6Z"/>
+      <path class="cls-4" d="M900.8,637.01l-29.41,53.05c-8.37,13.88-38.4,51.68-49.79,63.21l-43.73,39.38L119.1,317l25.02-57.39c8.47-17.3,23.65-41.21,35.91-56.06l39.26-43.89,681.51,477.34Z"/>
+      <polygon class="cls-4" points="924.75 564.37 912.68 604.91 262.71 121.67 211.78 38.95 924.75 564.37"/>
+      <path class="cls-5" d="M853.3,302.41c29.81,70.2,26.59,104.9,35.34,99.47,8.75-5.42,9.6-73.88-31.12-139.61-40.71-65.72-70.92-90.1-79.67-84.67s45.23,53.65,75.45,124.81Z"/>
+      <path class="cls-3" d="M763.33,153.88c0,6.35-5.15,11.49-11.49,11.49s-5.4-4.6-11.49-11.49c-4.21-4.75-27.96-32.21-21.61-32.21s44.6,25.89,44.6,32.21Z"/>
+      <path class="cls-5" d="M156.95,589.68c-24.28-52.25-22.72-78.54-29.19-74.22-6.47,4.31-5.38,56.03,27.01,104.63,32.4,48.6,55.82,66.24,62.29,61.93,6.47-4.31-35.5-39.37-60.12-92.34Z"/>
+      <path class="cls-2" d="M899.6,604.27c-62.53-1.43-82.14,17.29-83.57,79.83,1.43-62.53-17.29-82.14-79.83-83.57,62.53,1.43,82.14-17.29,83.57-79.83-1.43,62.53,17.29,82.14,79.83,83.57Z"/>
+      <path class="cls-2" d="M922.32,519.37c-22.04-.51-28.95,6.09-29.46,28.14.51-22.04-6.09-28.95-28.14-29.46,22.04.51,28.95-6.09,29.46-28.14-.51,22.04,6.09,28.95,28.14,29.46Z"/>
+      <circle class="cls-2" cx="801.77" cy="494.9" r="8.57"/>
+      <circle class="cls-2" cx="205.21" cy="218.46" r="10.04"/>
+      <circle class="cls-2" cx="167.98" cy="254.25" r="6.99"/>
+      <path class="cls-13" d="M508.38,433.87h-.12l-6.61,3.57-.99-3.92,8.31-4.45h4.39v38.02h-4.97v-33.22Z"/>
+    </g>
+  </g>
+</svg>

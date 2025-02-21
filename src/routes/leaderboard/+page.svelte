@@ -23,15 +23,15 @@
 
 </script>
 
-<div class="bg-secondary p-5 min-h-[100dvh] flex flex-col items-center xl:items-start">
+<div class="bg-secondary p-5 min-h-[100dvh] flex flex-col items-center xl:items-start pb-20">
     <SmLogo/>
     <div class="flex flex-col items-center w-full"> 
         <Heading text="Leaderboard"/>
     <div class="w-full flex flex-col items-center gap-7 xl:flex-row-reverse xl:justify-center xl:items-start xl:mt-10">
         <div class="flex flex-row items-end">
-            <img src="placement/ikona_2.svg" alt="" class="h-23 xl:h-30">
-            <img src="placement/ikona_1.svg" alt="" class="h-50 xl:h-60">
-            <img src="placement/ikona_3.svg" alt="" class="h-23 xl:h-30">
+            <img src="placement/ikona_2.svg" alt="" class="h-20 xl:h-30">
+            <img src="placement/ikona_1.svg" alt="" class="h-45 xl:h-60">
+            <img src="placement/ikona_3.svg" alt="" class="h-20 xl:h-30">
 
         </div>
     </div>       

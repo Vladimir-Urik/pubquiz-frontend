@@ -8,6 +8,9 @@
   import Heading from '../../components/Heading.svelte';
   import MobileHeader from '../../components/MobileHeader.svelte';
   import { avatarsStore } from '$lib/zustand/stores/avatars';
+	import ActionButton from '../../components/ActionButton.svelte';
+	import { removeToken } from '$lib/auth/storage';
+	import { goto } from '$app/navigation';
 
   let activeAvatarIndex = $state(-1);
   $effect(() => {
@@ -81,7 +84,7 @@
                 </button>
             </div>
         </div>
-        <div class="bg-white border-2 gap-2 gap-y-3 flex flex-wrap border-black p-3 justify-center w-full rounded-3xl mb-[100px] md:mb-0">
+        <div class="bg-white border-2 gap-2 gap-y-3 flex flex-wrap border-black p-3 justify-center w-full rounded-3xl md:mb-0">
             {#each $avatarsStore.avatars as avatar, index}
                 <button class="cursor-pointer"  onclick={() => {
                     activeAvatarIndex = index;
@@ -93,6 +96,18 @@
             {/each}
         </div>
         <Menu />
+    </div>
+
+    <div class="w-full md:flex md:justify-center mb-[100px] mt-8">
+        <button
+        class="text-white cursor-pointer md:w-fit text-center w-full font-semibold text-3xl rounded-3xl px-8 border-black bg-red-500 ButtonLink hover:bg-red-600 border-3 border-b-8 py-2 transition-colors duration-200"
+        onclick={(e) => {
+            e.preventDefault();
+            removeToken();
+			goto('/login');  
+        }}>
+            ODHLÁSIT SE
+        </button>
     </div>
    
 </div>

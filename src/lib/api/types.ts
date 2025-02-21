@@ -32,12 +32,6 @@ export interface Avatar {
   name: string;
 }
 
-export interface LeaderboardEntry {
-  user: User;
-  score: number;
-  position: number;
-}
-
 export interface Quiz {
   id: number;
   title: string;
@@ -49,17 +43,28 @@ export interface Quiz {
 export interface Question {
   id: number;
   quiz_id: number;
-  question: string;
-  options: string[];
-  created_at: string;
-  updated_at: string;
+  text: string;
+  answers: Answer[];
   content_type: "video" | "text" | "art";
+  content?: string;
+}
+
+export interface Answer {
+  id: number;
+  text: string;
+  is_correct: boolean;
 }
 
 export interface QuizSubmission {
   quiz_id: number;
   answers: {
     question_id: number;
-    answer: string;
+    answer: number;
   }[];
+}
+
+export interface QuizResult {
+  score: number;
+  total_questions: number;
+  xp_earned: number;
 }

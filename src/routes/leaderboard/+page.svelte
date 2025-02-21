@@ -1,15 +1,15 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { api } from '$lib/api/client';
-    import type { LeaderboardEntry } from '$lib/api/types';
 
     import Container from "../../components/Container.svelte";
     import SmLogo from "../../components/smLogo.svelte";
     import Menu from "../../components/Menu.svelte";
     import LeaderboardItem from "../../components/LeaderboardItem.svelte";
     import Heading from "../../components/Heading.svelte";
+	import type { User } from '$lib/api/types';
 
-    let leaderboard: LeaderboardEntry[] = [];
+    let leaderboard: User[] = $state([]);
 
     onMount(async () => {
         try {

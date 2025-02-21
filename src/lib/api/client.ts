@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { AxiosInstance } from 'axios';
-import type { User, LoginRequest, RegisterRequest, UpdateUserRequest, Avatar, LeaderboardEntry, Quiz, Question, QuizSubmission } from './types';
+import type { User, LoginRequest, RegisterRequest, UpdateUserRequest, Avatar, Quiz, Question, QuizSubmission, QuizResult } from './types';
 import { getToken } from '$lib/auth/storage';
 import { getBackendUrl } from '$lib/api/utils';
 
@@ -55,6 +55,9 @@ class ApiClient {
   // User endpoints
   async getCurrentUser(): Promise<User> {
     const response = await this.client.get('/user/me');
+    if(response.status === 401) {
+      return Promise.reject(new Error('Unauthorized'));
+    }
     return response.data;
   }
 
@@ -70,7 +73,7 @@ class ApiClient {
   }
 
   // Leaderboard endpoints
-  async getLeaderboard(): Promise<LeaderboardEntry[]> {
+  async getLeaderboard(): Promise<User[]> {
     const response = await this.client.get('/leaderboard');
     return response.data;
   }
@@ -91,7 +94,7 @@ class ApiClient {
     return response.data;
   }
 
-  async submitQuiz(submission: QuizSubmission): Promise<any> {
+  async submitQuiz(submission: QuizSubmission): Promise<QuizResult> {
     const response = await this.client.post(`/quizzes/${submission.quiz_id}/submit`, submission);
     return response.data;
   }

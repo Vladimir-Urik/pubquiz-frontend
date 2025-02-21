@@ -13,6 +13,8 @@
 	const apiClient = new ApiClient();
 
 	const refreshUser = () => {
+		if(route == "/login" || route == "/register") return;
+
 		apiClient.setAuthToken($authStore.token)
 		apiClient.getCurrentUser().then((data) => {
 			if(data == undefined) {

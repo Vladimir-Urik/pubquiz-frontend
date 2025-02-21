@@ -53,6 +53,7 @@ export interface Question {
   options: string[];
   created_at: string;
   updated_at: string;
+  content_type: "video" | "text" | "art";
 }
 
 export interface QuizSubmission {

@@ -21,6 +21,9 @@
 			} else {
 				$authStore.setUser(data);
 			}
+		}).catch(() => {
+			removeToken();
+			toLogin();
 		})
 	}
 

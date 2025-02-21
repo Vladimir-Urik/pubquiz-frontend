@@ -36,8 +36,8 @@
         </div>
     </div>       
 
-        <div class="h-[50%] w-full mt-8 rounded-3xl flex flex-col items-center xl:w-[40%] ">
-            <div class="p-5 w-[100%] overflow-y-auto xl:px-3 xl:w-[80%]">
+        <div class="h-[50%] w-full mt-8 rounded-3xl flex flex-col items-center md:w-[80%] xl:w-[40%] ">
+            <div class="p-5 w-[100%] overflow-y-auto xl:px-3  lg:w-[80%]">
                 {#each leaderboard as entry,index (entry.id)}
                     <LeaderboardItem entry={entry} position={index + 1}/>
                 {/each}

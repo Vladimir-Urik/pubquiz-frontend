@@ -4,7 +4,7 @@
     import type { LeaderboardEntry } from '$lib/api/types';
 
     import Container from "../../components/Container.svelte";
-    import SmLogo from "../../components/smLogo.svelte";
+    import MobileHeader from "../../components/MobileHeader.svelte";
     import Menu from "../../components/Menu.svelte";
     import LeaderboardItem from "../../components/LeaderboardItem.svelte";
     import Heading from "../../components/Heading.svelte";
@@ -24,7 +24,7 @@
 </script>
 
 <div class="bg-secondary p-5 min-h-[100dvh] flex flex-col items-center xl:items-start pb-20">
-    <SmLogo/>
+    <MobileHeader/>
     <div class="flex flex-col items-center w-full"> 
         <Heading text="Leaderboard"/>
     <div class="w-full flex flex-col items-center gap-7 xl:flex-row-reverse xl:justify-center xl:items-start xl:mt-10">

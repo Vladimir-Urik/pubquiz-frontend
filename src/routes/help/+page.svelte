@@ -38,7 +38,7 @@ import Menu from "../../components/Menu.svelte";
             <Heading text="Jak hrát?" />
             <div class=" text-white text-md md:text-xl text-center mx-8 mb-10 tracking-wide xl:w-[50%]">
                 <p class="flex ">
-                    Kliknutím na ikonku "Domů" se dostanete do nabídky kvízů. Kliknutím na jeden z nich spustíte hru, jejímž cílem je odpovědět na co nejvíc otázek správně, k čemuž vám slouží otázka formou videa, textu či obrázku a možnosti odpovědí. Po vyplnění kvízu se dostanete k výsledku a zvýšení bodů.
+                    Kliknutím na ikonku "Domů" se dostanete do nabídky kvízů. Výběrem jednoho z nich spustíte hru, jejímž cílem je odpovědět na co nejvíc otázek správně, k čemuž vám slouží otázka formou videa, textu či obrázku a možnosti odpovědí. Po vyplnění kvízu se dostanete k výsledku a zvýšení bodů.
                     
                 </p>
             </div>

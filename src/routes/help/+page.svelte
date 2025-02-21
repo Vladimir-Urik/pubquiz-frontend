@@ -11,7 +11,7 @@ import Menu from "../../components/Menu.svelte";
 <div class="bg-secondary p-5 min-h-[100dvh]">
     <MobileHeader />
 
-    <div class="w-full flex flex-col items-center gap-7 md:items-center py-20">
+    <div class="w-full flex flex-col items-center gap-7 md:items-center pb-20">
         <div class="w-full flex flex-col items-center md:items-center">
             <Heading text="O projektu" />
             <p class=" text-white text-md md:text-xl text-center mx-8 mb-10 tracking-wide xl:w-[50%]">

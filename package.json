@@ -38,7 +38,7 @@
 	},
 	"dependencies": {
 		"@capacitor/android": "^7.0.1",
-		"@capacitor/cli": "^7.0.1",
+		"@capacitor/cli": "^8.0.2",
 		"@capacitor/core": "^7.0.1",
 		"@capacitor/ios": "^7.0.1",
 		"@fontsource-variable/geologica": "^5.1.1",
